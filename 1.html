@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,153 +8,143 @@
     <title>Document</title>
 </head>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
     }
-    .flex-wrap{
-      width: 300px;
-      height: 300px;
-      background-color: skyblue;
+
+    .flex-wrap {
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        box-sizing: border-box;
+        margin: auto;
+        margin-bottom: 50px;
+
+
     }
 
-    .flex1{
+    .flex-wrap .item {
+        width: 70px;
+        height: 70px;
+        background-color: black;
+        border-radius: 50%;
+        box-shadow: inset 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+    }
+
+    /* 一点 */
+    .flex1 {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
 
-    }
-    .flex1 .item{
-        width: 100px;
-        height: 100px;
-        background-color: blue;
-    }
-    .flex2{
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        align-content: space-around;
-
-    }
-    .flex2 .item{
-        width: 80px;
-        height: 80px;
-        background-color: blue;
-    }
-    .flex3{
+    /* 两点 */
+    .flex2 {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
 
     }
-    .flex3 .item{
-        width: 80px;
-        height: 80px;
-        background-color: blue;
-    }
-    .flex3 .item:nth-of-type(2){
-       align-self: flex-end;
-       /* 第二种方法 */
-       /* margin-top: auto; */
-       /* margin-left: auto; */
+
+    .flex2 .item:nth-of-type(2) {
+        align-self: flex-end;
+        /* 第二种方法 */
+        /* margin-top: auto; */
+        /* margin-left: auto; */
     }
 
-    .flex4{
+    /* 三点 */
+    .flex3 {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
 
     }
-    .flex4 .item{
-        width: 80px;
-        height: 80px;
-        background-color: blue;
-    }
-    .flex4 .item:nth-of-type(2){
-       align-self: center;
-    }
-    .flex4 .item:nth-of-type(3){
-       align-self: flex-end;
+
+    .flex3 .item:nth-of-type(2) {
+        align-self: center;
     }
 
-    .flex5{
+    .flex3 .item:nth-of-type(3) {
+        align-self: flex-end;
+    }
+
+    /* 四点 */
+    .flex4 {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
 
     }
-    .flex5 .item{
-        width: 80px;
-        height: 80px;
-        background-color: blue;
-    }
-    .flex5 .first,.flex5 .second{
+
+
+    .flex4 .first,
+    .flex4 .second {
         display: flex;
         justify-content: space-between;
     }
-    
-    .flex6{
+
+    /* 五点 */
+    .flex5 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-    .flex6 .item{
-        width: 80px;
-        height: 80px;
-        background-color: blue;
-    }
-    .flex6 .first,.flex6 .three{
+
+    .flex5 .first,
+    .flex5 .third {
         display: flex;
         justify-content: space-between;
     }
-    .flex6 .second{
+
+    .flex5 .second {
         display: flex;
         justify-content: center;
     }
 
-    .flex7 {
+    /* 六点 */
+    .flex6 {
         display: flex;
         justify-content: space-between;
     }
-    .flex7 .item{
-        width: 80px;
-        height: 80px;
-        background-color: blue;
-    }
-    .flex7 .first,.flex7 .second{
+
+    .flex6 .first,
+    .flex6 .second {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 </style>
+
 <body>
-    1.上下垂直居中
     <div class="flex-wrap flex1">
         <div class="item"></div>
     </div>
-    2.列表排序
+
     <div class="flex-wrap flex2">
         <div class="item"></div>
         <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
     </div>
-    3.左上 右下两点布局
 
     <div class="flex-wrap flex3">
         <div class="item"></div>
         <div class="item"></div>
+        <div class="item"></div>
     </div>
-
-    4.左上 中间 右下 三点布局
     <div class="flex-wrap flex4">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+        <div class="first">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="second">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
     </div>
-    5.四个顶点布局
     <div class="flex-wrap flex5">
         <div class="first">
             <div class="item"></div>
@@ -161,25 +152,13 @@
         </div>
         <div class="second">
             <div class="item"></div>
+        </div>
+        <div class="third">
+            <div class="item"></div>
             <div class="item"></div>
         </div>
     </div>
-    6.四个顶点 中间一点布局
     <div class="flex-wrap flex6">
-        <div class="first">
-            <div class="item"></div>
-            <div class="item"></div>
-        </div>
-        <div class="second">
-            <div class="item"></div>
-        </div>
-        <div class="three">
-            <div class="item"></div>
-            <div class="item"></div>
-        </div>
-    </div>
-    7.6个点布局
-    <div class="flex-wrap flex7">
         <div class="first">
             <div class="item"></div>
             <div class="item"></div>
@@ -193,4 +172,5 @@
         </div>
     </div>
 </body>
+
 </html>
